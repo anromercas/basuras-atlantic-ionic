@@ -18,6 +18,8 @@ import { MasOpc } from '../../interfaces/masOpc.interface';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { CargaArchivoProvider } from '../../providers/carga-archivo/carga-archivo';
 import { BasuraProvider } from '../../providers/basura/basura';
+import { Residuos } from '../../interfaces/residuos.interface';
+import { RESIDUOS } from '../../data/data.residuos';
 
 @Component({
   selector: 'page-califica',
@@ -47,6 +49,7 @@ export class CalificaPage {
   calificaciones: Calificacion[] = [];
   masOpciones: MasOpc[] = [];
   llenados: Llenado[] = [];
+  residuos: Residuos[] = [];
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
@@ -58,8 +61,10 @@ export class CalificaPage {
     this.calificaciones = CALIFICACIONES;
     this.masOpciones = masOpciones;
     this.llenados = LLENADOS;
+    this.residuos = RESIDUOS;
 
     this.basura = this.navParams.get("basura");
+   
 
     this.calificacion = 5;
     this.estado = '';
